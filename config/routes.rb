@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "pages#home"
+  root "establishments#index"
   get 'pages/about'
   get 'pages/contact'
 

@@ -7,6 +7,7 @@ class EstablishmentsController < ApplicationController
   end
 
   def show
+    @split_url = @establishment.split_url(@establishment.city)
   end
 
   def new

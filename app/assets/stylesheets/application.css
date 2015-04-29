@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+
+html, body, .full-height {
+    height: 100%;
+}
+
+
+#well1 {
+    height: calc(15% - 20px);
+}
+#well2 {
+    height: 100%;
+    margin-bottom: 0;
+    overflow: auto;
+}
+
+#well3 {
+    height: 100%;
+    margin-bottom: 0;
+    overflow: auto;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.q-height {
+  height: 25%;
+}
