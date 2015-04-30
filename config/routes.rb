@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
 
-  resources :establishments
-  resources :reviews
+  resources :establishments do
+    resources :reviews, except: [:show, :index]
+  end
 end

@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :set_establishment
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -20,6 +21,10 @@ class ReviewsController < ApplicationController
 
   def set_review
     @review = Review.find(params[:id])
+  end
+
+  def set_establishment
+    @establishment = Establishment.find(params[:establishment_id])
   end
 
   def review_params
