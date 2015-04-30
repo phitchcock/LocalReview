@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'pages/contact'
 
   resources :establishments
+  resources :reviews
 end
