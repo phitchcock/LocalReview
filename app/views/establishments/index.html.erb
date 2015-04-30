@@ -8,7 +8,18 @@
                     <a href="<%= establishment_path(establishment) %>" class="list-group-item">
                         <h4 class="list-group-item-heading"><%= establishment.name %></h4>
                         <p class="list-group-item-text"><%= establishment.address %></p>
-                        <p>Rating: </p>
+                          <% if establishment.reviews.blank? %>
+                            <p>Rating: 0</p>
+                          <% else %>
+
+                        <% average = [] %>
+                          <% establishment.reviews.each do |review| %>
+                          <% average << review.rating %>
+                      <% end %>
+                        <p>Rating: <%= average.sum / average.size.to_f %>
+                      <% end %>
+
+                        </p>
                     </a>
                     <% end %>
                 </div>
