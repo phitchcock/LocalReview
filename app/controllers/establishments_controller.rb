@@ -7,6 +7,7 @@ class EstablishmentsController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(establishment_id: @establishment.id)
     @split_url = @establishment.split_url(@establishment.city)
   end
 

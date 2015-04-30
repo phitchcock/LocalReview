@@ -10,8 +10,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = current_user.reviews.new(review_params)
+    @review.establishment_id = @establishment.id
+
     if @review.save
-      redirect_to root_path
+      redirect_to @establishment
     else
       render :new
     end
