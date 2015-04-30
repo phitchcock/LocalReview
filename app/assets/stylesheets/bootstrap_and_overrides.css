@@ -5,3 +5,86 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
+
+.navbar {
+  margin-bottom: 0px;
+  background-color: #1AA3DF;
+  border: transparent;
+  border-radius: 0px;
+  height: 50px;
+}
+
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #082F41;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #FFF;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #082F41;
+}
+
+// NAVBAR
+
+.navbar {
+font-size: 12px;
+font-weight: 600;
+text-transform: uppercase;
+}
+
+a.navbar-brand {
+text-transform: lowercase;
+}
+
+// BUTTONS
+
+.btn {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: transparent;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+  padding: 15px 30px;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+  padding: 8px 15px;
+}
+
+.btn-xs, .btn-group-xs > .btn {
+padding: 5px 10px;
+font-size: 11px;
+}
+
+// FONTS
+
+p.small {
+font-size: 14px;
+font-weight: 300;
+}
+
+// LOGIN
+
+.jumbotron {
+    border: 4px solid #1582B1;
+    margin-top: 75px;
+}
+
+.jumbotron h2 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+
+
