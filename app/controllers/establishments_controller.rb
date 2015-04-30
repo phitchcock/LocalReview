@@ -4,11 +4,17 @@ class EstablishmentsController < ApplicationController
 
   def index
     @establishments = Establishment.all
+
   end
 
   def show
-    @reviews = Review.where(establishment_id: @establishment.id)
+    @reviews = Review.where(establishment_id: @establishment.id).order("created_at DESC")
     @split_url = @establishment.split_url(@establishment.city)
+    if @reviews.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @reviews.average(:rating).round(2)
+    end
   end
 
   def new
