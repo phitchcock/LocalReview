@@ -1,4 +1,4 @@
-<%= form_for([@establishment, @review]) do |f| %>
+<%= simple_form_for([@establishment, @review], html: {class: "form-signin"}) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -24,3 +24,5 @@
     <%= f.submit class: "btn btn-primary"%>
   </div>
 <% end %>
+
+

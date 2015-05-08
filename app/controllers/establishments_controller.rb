@@ -54,7 +54,7 @@ class EstablishmentsController < ApplicationController
   private
 
   def set_establishment
-    @establishment = Establishment.find(params[:id])
+    @establishment = Establishment.friendly.find(params[:id])
   end
 
   def establishment_params
