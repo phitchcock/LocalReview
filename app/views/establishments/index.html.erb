@@ -1,7 +1,11 @@
 
+<% breadcrumb :establishments, @establishments %>
+<!--<div class="breadcrumbs">
+  
+</div>-->
     <div class="row full-height nopadding">
         <div class="col-md-3 full-height nopadding">          
-            <div class="well2" id="">
+            <div class="well2" id="sidebar">
               <div class="list-group nopadding" id="establishments">
 
                   <%= render 'establishment_list', establishments: @establishments %>
@@ -16,15 +20,36 @@
         </div>
         <div class="col-md-9 full-height nopadding">
           <div class="" id="well3">
-            <iframe
+
+            <!--<iframe
               width="100%"
               height="100%"
               frameborder="0" style="border:0"
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnP6SykQuPfIT2EIr2jAmT_KU2xV2U_vQ &q=loc%3A+F+Street+at+%31%32th+Street+Sacramento+%28downtown%29+CA+US">
-            </iframe>
+            </iframe>-->
           </div>
         </div>
 
   </div>
 </div>
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+handler.buildMap({ 
+  provider: {
+    disableDefaultUI: true
+  }, 
+  internal: {
+    id: 'well3'
+    }
+  }, 
+  function(){
+    var json_array = [
 
+    ]
+
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+});
+
+</script>

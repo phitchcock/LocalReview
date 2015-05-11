@@ -4,6 +4,10 @@ class EstablishmentsController < ApplicationController
 
   def index
     @establishments = Establishment.paginate(page: params[:page], per_page: 20)
+    @hash = Gmaps4rails.build_markers(@establishments) do |establishment, marker|
+      marker.lat establishment.latitude
+      marker.lng establishment.longitude
+    end
   end
 
   def show

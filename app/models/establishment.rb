@@ -9,11 +9,15 @@ class Establishment < ActiveRecord::Base
   has_many :reviews
 
   def geo_address
-    [address, split_city[0]].compact.join(', ')
+    [URI::escape(address), URI::escape(combine(split_city[0]))].compact.join('%20')
   end
 
   def split_city
     self.city.split('|')
+  end
+
+  def combine(str)
+    str.gsub!(',', ' ')
   end
 
   def split_url(url)

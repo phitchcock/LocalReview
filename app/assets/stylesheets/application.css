@@ -30,12 +30,18 @@ html, body, .full-height {
     height: 100%;
     margin-bottom: 0;
     overflow: auto;
+    margin-top: 30px;
 }
 
 #well3 {
     height: 100%;
     margin-bottom: 0;
     overflow: auto;
+    margin-top: 35px;
+}
+
+.somepadding {
+  padding-top: 30px;
 }
 
 .nopadding {
@@ -49,6 +55,17 @@ html, body, .full-height {
 
 .half-height {
   height: 50%;
+}
+
+.breadcrumbs {
+  height: 37px;
+  line-height: 37px;
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  background-color: #333;
+  color: #CCC;
+  z-index: 1;
 }
 
 /* Dark theme */
