@@ -26,7 +26,7 @@ html, body, .full-height {
 #well1 {
     height: calc(15% - 20px);
 }
-#well2 {
+.well2 {
     height: 100%;
     margin-bottom: 0;
     overflow: auto;

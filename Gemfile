@@ -32,6 +32,13 @@ gem 'simple_form'
 
 gem 'friendly_id'
 
+gem 'simple_token_authentication'
+
+gem 'will_paginate'
+
+gem 'will_paginate-bootstrap' 
+
+gem 'geocoder'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

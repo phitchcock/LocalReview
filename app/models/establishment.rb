@@ -1,9 +1,20 @@
 class Establishment < ActiveRecord::Base
 
+  geocoded_by :address
+  after_validation :geocode
+
   extend FriendlyId
   friendly_id :name, use: :slugged
   
   has_many :reviews
+
+  def geo_address
+    [address, split_city[0]].compact.join(', ')
+  end
+
+  def split_city
+    self.city.split('|')
+  end
 
   def split_url(url)
     url.split('|')

@@ -3,14 +3,13 @@ class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @establishments = Establishment.all
-
+    @establishments = Establishment.paginate(page: params[:page], per_page: 20)
   end
 
   def show
     @reviews = Review.where(establishment_id: @establishment.id).order("created_at DESC")
     @split_url = @establishment.split_url(@establishment.city)
-    
+    @split_city = @establishment.split_city
 
     if @reviews.blank?
       @avgerage_rating = 0

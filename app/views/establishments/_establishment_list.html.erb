@@ -1,0 +1,14 @@
+<% @establishments.each do |establishment| %>
+                  <%= link_to establishment do %>
+                  <a href="<%= establishment_path(establishment) %>" class="list-group-item">
+                      <h4 class="list-group-item-heading"><%= establishment.name %></h4>
+                      <p class="list-group-item-text"><%= establishment.address %></p>
+
+                        <% if establishment.reviews.blank? %>
+                          <p>Rating: 0</p>
+                        <% else %>
+                          <p><%= establishment.average_rating(establishment) %></p>
+                        <% end %>
+                  </a>
+                  <% end %>
+             <% end %>

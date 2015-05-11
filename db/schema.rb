@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508181819) do
+ActiveRecord::Schema.define(version: 20150511201213) do
 
   create_table "establishments", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20150508181819) do
     t.string   "city"
     t.string   "map"
     t.string   "slug"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -60,8 +62,10 @@ ActiveRecord::Schema.define(version: 20150508181819) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "authentication_token"
   end
 
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 

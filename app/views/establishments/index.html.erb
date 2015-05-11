@@ -1,23 +1,17 @@
 
     <div class="row full-height nopadding">
         <div class="col-md-3 full-height nopadding">          
-            <div class="" id="well2">
-              <% @establishments.each do |establishment| %>
-                <div class="list-group nopadding"> 
-                    <%= link_to establishment do %>
-                    <a href="<%= establishment_path(establishment) %>" class="list-group-item">
-                        <h4 class="list-group-item-heading"><%= establishment.name %></h4>
-                        <p class="list-group-item-text"><%= establishment.address %></p>
+            <div class="well2" id="">
+              <div class="list-group nopadding" id="establishments">
 
-                          <% if establishment.reviews.blank? %>
-                            <p>Rating: 0</p>
-                          <% else %>
-                            <p><%= establishment.average_rating(establishment) %></p>
-                          <% end %>
-                    </a>
-                    <% end %>
-                </div>
-              <% end %>
+                  <%= render 'establishment_list', establishments: @establishments %>
+ 
+              </div>
+
+                <div class="list-group nopadding" id="infinite-scrolling">
+                  <%= will_paginate @establishments, renderer: BootstrapPagination::Rails %>
+                </div> 
+                  
             </div>
         </div>
         <div class="col-md-9 full-height nopadding">
