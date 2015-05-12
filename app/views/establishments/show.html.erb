@@ -15,16 +15,76 @@
             
           <% end %>
   </div>
-  <div class="container text-center">
+  <div class="container">
     <div class="row somepadding">
-      <div class="col-md-6">
+      <div class="col-md-2 somepadding">
+        <a href="#" class="thumbnail">
+          <img src="http://placehold.it/150x150">
+        </a>
+      </div>
+      <div class="col-md-7">
+        
         <h1><%= @establishment.name %></h1>
         <h3><%= @establishment.address %></h3>
         <h3><%= @split_url[0] %></h3>
-      
-      </div>
-      <div class="col-md-6 somepadding">
+        <h4><%= link_to @establishment.website, @establishment.website %></h4>
+        <div>
+         
+        </div>
         
+      </div>
+      <div class="col-md-3 somepadding">
+        <div>
+          <h4>Hours of Operation</h4>
+          <p>SUNDAY 9:00am - 12:00am</p>
+          <p>MONDAY 9:00am - 12:00am</p>
+          <p>TUESDAY 9:00am - 12:00am</p>
+          <p>SUNDAY 9:00am - 12:00am</p>
+          <p>MONDAY 9:00am - 12:00am</p>
+          <p>TUESDAY 9:00am - 12:00am</p>
+          <p>EMAIL whatever@whatever.com</p>
+          <p>PHONE 123-456-7890</p>
+          <p>SOCIAL</p>
+        </div>
+      </div>
+    </div>
+    <div class="row somepadding">
+      <div class="col-md-9">
+        <div class="bs-example" data-example-id="hoverable-table">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Beer</th>
+          <th>Type</th>
+          <th>ABV</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Whatever IPA</td>
+          <td>IPA</td>
+          <td>6.5</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Whatever Ale</td>
+          <td>Ale</td>
+          <td>5.0</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Whatever Pilsner</td>
+          <td>Pilsner</td>
+          <td>4.5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    </div>
+      </div>
+      <div>
           <p><%= @average_rating %></p>
       <% if @reviews.blank? %>
         <h3>No reviews yet. Be the first to write one!</h3>
@@ -35,9 +95,8 @@
       <% end %>
 
       <%= link_to "Write Review", new_establishment_review_path(@establishment), class: "btn btn-primary" %>
-   
-      </div>
-    </div>
+        </div>
+       
   </div>
   
   
