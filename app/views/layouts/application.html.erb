@@ -25,7 +25,7 @@
   <% end %>
 <% end %> 
 
-<%= render 'layouts/nav' %>
+<%= render 'layouts/nav' unless @skip_partial %>
 
 
   <%= yield %>

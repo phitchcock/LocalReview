@@ -33,7 +33,7 @@ html, body, .full-height {
     margin-top: 30px;
 }
 
-#well3 {
+.well3 {
     height: 100%;
     margin-bottom: 0;
     overflow: auto;
@@ -67,6 +67,19 @@ html, body, .full-height {
   color: #CCC;
   z-index: 1;
 }
+
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 
 /* Dark theme */
 
