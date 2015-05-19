@@ -3,11 +3,15 @@ class EstablishmentsController < ApplicationController
   before_action :set_establishment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @establishments = Establishment.paginate(page: params[:page], per_page: 20)
+    @establishments = Establishment.all#Establishment.paginate(page: params[:page], per_page: 20)
     @hash = Gmaps4rails.build_markers(@establishments) do |establishment, marker|
       marker.lat establishment.latitude
       marker.lng establishment.longitude
     end
+  end
+
+  def search
+    @results = Establishment.search_by_title(params[:term])
   end
 
   def show

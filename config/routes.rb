@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :establishments do
     resources :reviews, except: [:show, :index]
+
+    collection do
+      post :search, to: "establishments#search"
+    end
   end
 
   namespace :api, defaults: { format: :json} do

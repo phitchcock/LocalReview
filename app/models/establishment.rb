@@ -35,4 +35,9 @@ class Establishment < ActiveRecord::Base
     return average.sum / average.size.to_f
   end
 
+  def self.search_by_title(term)
+    return [] if term.blank?
+    where("name LIKE ?", "%#{term}%")
+  end
+
 end

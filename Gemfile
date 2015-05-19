@@ -59,6 +59,12 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+
+  gem 'spring-commands-rspec'
+
+  gem 'guard-rspec'
+
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -69,5 +75,9 @@ group :development, :test do
   gem 'spring'
 
   gem 'sqlite3'
+end
+
+group :test do
+  gem 'capybara'
 end
 

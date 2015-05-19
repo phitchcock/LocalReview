@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Review do
+RSpec.describe Review, :type => :model do
   it 'saves itself' do
     Review.create(rating: 5, comment: 'Whatever')
 
