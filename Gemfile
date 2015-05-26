@@ -46,8 +46,8 @@ gem "gretel"
 
 gem 'newrelic_rpm'
 
-#gem 'unicorn'
-gem 'puma'
+gem 'unicorn'
+#gem 'puma'
 
 gem 'rack-timeout'
 # Use ActiveModel has_secure_password
