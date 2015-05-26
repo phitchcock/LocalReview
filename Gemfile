@@ -70,7 +70,7 @@ group :development, :test do
 
   gem 'guard-rspec'
 
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
+  #gem 'rb-fsevent' if `uname` =~ /Darwin/
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
