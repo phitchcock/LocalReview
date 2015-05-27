@@ -1,4 +1,4 @@
-<% cache('keyword_home') do %>
+
 <% breadcrumb :establishments, @establishments %>
 <!--<div class="breadcrumbs">
   
@@ -14,7 +14,7 @@
               </div>
 
                 <div class="list-group nopadding" id="infinite-scrolling">
-                  <%= will_paginate @establishments %>
+                  <%= will_paginate @establishments, renderer: BootstrapPagination::Rails %>
                 </div> 
                   
             </div>
@@ -33,7 +33,7 @@
 
   </div>
 </div>
-<% end %>
+
 <script type="text/javascript">
   handler = Gmaps.build('Google');
 handler.buildMap({ 
