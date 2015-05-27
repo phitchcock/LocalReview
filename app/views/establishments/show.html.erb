@@ -1,6 +1,7 @@
 <% breadcrumb :establishment, @establishment %>
 
-<% cache do %>
+<% cache('show') do %>
+
 
   <div class="row q-height nopadding">
     <% if @establishment.map %>

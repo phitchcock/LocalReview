@@ -1,4 +1,4 @@
-
+<% cache('show') do %>
 <% breadcrumb :establishments, @establishments %>
 <!--<div class="breadcrumbs">
   
@@ -33,7 +33,7 @@
 
   </div>
 </div>
-
+<% end %>
 <script type="text/javascript">
   handler = Gmaps.build('Google');
 handler.buildMap({ 
