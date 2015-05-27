@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527002426) do
+ActiveRecord::Schema.define(version: 20150527003435) do
 
   create_table "establishments", force: :cascade do |t|
     t.string   "name"
@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 20150527002426) do
     t.float    "latitude"
     t.float    "longitude"
   end
-
-  add_index "establishments", ["slug"], name: "index_establishments_on_slug"
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
