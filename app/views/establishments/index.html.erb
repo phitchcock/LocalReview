@@ -1,8 +1,9 @@
-
+<% cache('keyword_home') do %>
 <% breadcrumb :establishments, @establishments %>
 <!--<div class="breadcrumbs">
   
 </div>-->
+
     <div class="row full-height nopadding">
         <div class="col-md-3 full-height nopadding">          
             <div class="well2" id="sidebar">
@@ -32,6 +33,7 @@
 
   </div>
 </div>
+<% end %>
 <script type="text/javascript">
   handler = Gmaps.build('Google');
 handler.buildMap({ 
