@@ -8,9 +8,9 @@
         <div class="col-md-3 full-height nopadding">          
             <div class="well2" id="sidebar">
               <div class="list-group nopadding" id="establishments">
-                <%# cache('show') do %>
+                <% cache "establishment_list_p#{params[:page]}", skip_digest: true, :expires_in => 10.minutes do %>
                   <%= render 'establishment_list', establishments: @establishments %>
-                <%# end %>
+                <% end %>
               </div>
 
                 <div class="list-group nopadding" id="infinite-scrolling">
